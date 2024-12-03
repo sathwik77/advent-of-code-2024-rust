@@ -1,0 +1,11 @@
+bin = [
+    { name = "day1", path = "puzz-1/main.rs" },
+    { name = "day2", path = "puzz-2/main.rs" },
+]
+[package]
+name = "advent-of-code-2024"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sathwik G"]
+
+[dependencies]
