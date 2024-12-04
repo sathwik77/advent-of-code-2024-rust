@@ -1,6 +1,7 @@
 bin = [
     { name = "day1", path = "puzz-1/main.rs" },
     { name = "day2", path = "puzz-2/main.rs" },
+    { name = "day3", path = "puzz-3/main.rs" },
 ]
 [package]
 name = "advent-of-code-2024"
@@ -9,3 +10,4 @@ edition = "2021"
 authors = ["Sathwik G"]
 
 [dependencies]
+regex = "1.11.1"
