@@ -30,14 +30,16 @@ fn main() {
     let mut enabled = true;
     let mut sum = 0;
 
-    for token in input.split_inclusive(&[')', '&', '+', '_', '!', '?', '^', ')', ']']) {
+    for token in input.split_inclusive(&[')', '&', '+', '_', '!', '?', '^', ']']) {
         if let Some(control_caps) = control_pattern.captures(token) {
+            //switch control flow based on encountered word
             if &control_caps[0] == "don't()" {
                 enabled = false;
             } else if &control_caps[0] == "do()" {
                 enabled = true;
             }
         } else if enabled {
+            //checks actual pattern only if control flow is enabled
             if let Some(mul_caps) = mul_pattern.captures(token) {
                 let num1: i32 = mul_caps[1].parse().unwrap();
                 let num2: i32 = mul_caps[2].parse().unwrap();
